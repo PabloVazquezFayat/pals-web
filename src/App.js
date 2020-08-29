@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Profile from "./components/Profile/Profile";
+import AuthUser from "./components/Auth/AuthUser";
+import LogoutUser from "./components/Auth/LogoutUser";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
+
+  console.log(AuthUser());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={() => <Home />} />
+
+          <Route exact path="/login" component={(props) => 
+            AuthUser() === false ? <Login {...props} /> : <Redirect to="/profile" />}>
+          </Route>
+
+          <Route exact path="/profile" component={() => 
+            AuthUser() === true ? <Profile/> : <Redirect to="/login" />}>
+          </Route>
+
+          <Route exact path="/logout" component={()=> <Redirect to={LogoutUser()}/>}></Route>
+
+          <Route render={() => <PageNotFound />} />
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -11,8 +11,6 @@ import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
 
-  console.log(AuthUser());
-
   return (
     <div className="App">
       <Router>

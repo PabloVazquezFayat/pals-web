@@ -1,0 +1,23 @@
+.home-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container > img{
+    width: 200px;
+    height: 200px;
+    border: solid 1px gray;
+}
+
+.home-button-container{
+    margin: 50px 0px 0px 0px;
+    display: inline;
+}
+
+.home-button-container > .button{
+    margin: 0px 5px 0px 5px;
+}

@@ -11,8 +11,8 @@ export default function Home() {
             <Search></Search>
             <Location></Location>
             <div className="home-button-container">
-                <NavLink className="ui violet button" to='/login'>Log In</NavLink>
-                <NavLink className="ui inverted violet button" to='/signup'>Sing Up</NavLink>
+                <NavLink className="color-violet" to='/login'>Log In</NavLink>
+                <NavLink className="color-violet" to='/signup'>Sing Up</NavLink>
             </div>
         </div>
     )

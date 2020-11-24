@@ -1,6 +1,6 @@
-import "./Home.css"
+import './Home.css'
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Search from '../Search/Search'
 import Location from '../Location/Location'
 
@@ -11,8 +11,8 @@ export default function Home() {
             <Search></Search>
             <Location></Location>
             <div className="home-button-container">
-                <NavLink className="color-violet" to='/login'>Log In</NavLink>
-                <NavLink className="color-violet" to='/signup'>Sing Up</NavLink>
+                <NavLink className="signin-btn" to='/login'>Log In</NavLink>
+                <NavLink className="signup-btn" to='/signup'>Sing Up</NavLink>
             </div>
         </div>
     )
